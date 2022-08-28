@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Search from "../assets/svg/search";
-// import { ConnectButton } from "web3uikit";
-// import { useContext } from "react";
-// import { CoinMarketContext } from "../context/context";
+import { CryptoCards, Button } from '@web3uikit/core';
+import { useContext } from "react";
+import Link from 'next/link'
+import { useMoralis } from "react-moralis";
+
 
 const styles = {
   navLink: `text-white flex mx-[10px]`,
@@ -17,15 +19,23 @@ const styles = {
 };
 
 const Header = () => {
-//   const { getQuote } = useContext(CoinMarketContext);
+   const { authenticate, logout, isAuthenticating, user, isAuthenticated } =
+     useMoralis();
+   const handleClick = (e) => {
+     e.preventDefault();
+     router.push("/");
+   };
+
   return (
     <div className={styles.header}>
+      <Link href={"/"} onClick={handleClick}>
       <Image
         alt=''
         src='https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_white_1.svg'
         width={220}
         height={220}
       />
+         </Link>
 
       <div className={styles.headerWrapper}>
         <nav className={styles.nav}>
@@ -66,8 +76,8 @@ const Header = () => {
           </div>
         </nav>
 
-    
         <div className='flex items-center'>
+        <Button theme="primary" type="button" text="Connect Wallet" />
           <div className={styles.inputContainer}>
             <Search />
             <input className={styles.input} placeholder='Search' />

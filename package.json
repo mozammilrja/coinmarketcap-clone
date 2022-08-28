@@ -6,8 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@faker-js/faker": "^7.4.0",
     "@walletconnect/web3-provider": "^1.8.0",
     "@web3auth/web3auth": "^1.2.4",
+    "@web3uikit/core": "^0.1.6",
+    "@web3uikit/icons": "^0.1.5",
+    "@web3uikit/web3": "^0.1.6",
     "chart.js": "^3.9.1",
     "gun": "^0.2020.1238",
     "magic-sdk": "^9.0.0",
@@ -17,8 +21,9 @@
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.1.0",
     "react-moralis": "^1.4.1",
+    "react-switch": "^7.0.0",
     "switch": "^0.0.0",
-    "web3uikit": "^1.0.2"
+    "web3uikit": "^0.1.159"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
